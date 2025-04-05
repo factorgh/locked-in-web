@@ -12,7 +12,7 @@ const Navbar = () => {
     <header className="bg-white shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold tracking-tighter">
-          <span className="text-pink-600">Dark</span>Hair
+          <span className="text-pink-600">The Dark</span>Her
         </Link>
 
         {/* Desktop Navigation */}
