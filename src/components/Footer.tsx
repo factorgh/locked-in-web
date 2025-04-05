@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">
-              <span className="text-pink-500">Lux</span>Hair
+              <span className="text-pink-500">Dark</span>Hair
             </h3>
             <p className="text-gray-400 mb-4">
               Premium hair care products to transform your hair and enhance your
