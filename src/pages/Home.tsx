@@ -38,7 +38,7 @@ const Home = () => {
             transition={{ duration: 0.8 }}
             style={{ fontFamily: "Playfair Display, serif" }}
           >
-            Transform Your Hair
+            Beauty That Remembers
           </motion.h1>
 
           <motion.p
