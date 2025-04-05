@@ -37,11 +37,16 @@ export const AdminProvider = ({ children }: { children: ReactNode }) => {
 
   useEffect(() => {
     // Load products from localStorage or use mock data
-    const savedProducts = localStorage.getItem("products");
+    try {
+      const saved = localStorage.getItem("products");
 
-    if (savedProducts && savedProducts !== null) {
-      setProducts(JSON.parse(savedProducts));
-    } else {
+      if (saved && saved !== "null") {
+        setProducts(JSON.parse(saved));
+      } else {
+        throw new Error("No saved products");
+      }
+    } catch (err) {
+      // fallback to mock
       setProducts(mockProducts);
       localStorage.setItem("products", JSON.stringify(mockProducts));
     }
