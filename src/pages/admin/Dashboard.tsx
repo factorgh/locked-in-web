@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import { ArrowUpRight, FileText, Package, ShoppingBag, Users } from 'lucide-react';
-import { useAdmin } from '../../context/AdminContext';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
+import { ArrowUpRight, FileText, Package, ShoppingBag } from "lucide-react";
+import { useAdmin } from "../../context/AdminContext";
 
 const AdminDashboard = () => {
   const { products, orders, politicalContent } = useAdmin();
@@ -16,18 +16,21 @@ const AdminDashboard = () => {
     setTotalRevenue(revenue);
 
     // Count pending orders
-    const pending = orders.filter(order => order.status === 'pending').length;
+    const pending = orders.filter((order) => order.status === "pending").length;
     setPendingOrders(pending);
 
     // Count active political content
-    const active = politicalContent.filter(content => content.active).length;
+    const active = politicalContent.filter((content) => content.active).length;
     setActiveContent(active);
   }, [orders, politicalContent]);
 
   return (
     <div className="container mx-auto px-4 py-12">
       <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8">
-        <h1 className="text-3xl font-bold" style={{ fontFamily: 'Playfair Display, serif' }}>
+        <h1
+          className="text-3xl font-bold"
+          style={{ fontFamily: "Playfair Display, serif" }}
+        >
           Admin Dashboard
         </h1>
         <div className="flex flex-wrap gap-2 mt-4 md:mt-0">
@@ -63,7 +66,9 @@ const AdminDashboard = () => {
           <div className="flex justify-between items-start">
             <div>
               <p className="text-gray-500 text-sm">Total Revenue</p>
-              <h3 className="text-2xl font-bold mt-1">${totalRevenue.toFixed(2)}</h3>
+              <h3 className="text-2xl font-bold mt-1">
+                ${totalRevenue.toFixed(2)}
+              </h3>
             </div>
             <div className="bg-pink-100 p-3 rounded-full">
               <ShoppingBag className="text-pink-600" size={20} />
@@ -173,13 +178,22 @@ const AdminDashboard = () => {
                       {new Date(order.date).toLocaleDateString()}
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap">
-                      <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
-                        ${order.status === 'pending' ? 'bg-yellow-100 text-yellow-800' : 
-                          order.status === 'processing' ? 'bg-blue-100 text-blue-800' : 
-                          order.status === 'shipped' ? 'bg-purple-100 text-purple-800' :
-                          order.status === 'delivered' ? 'bg-green-100 text-green-800' : 
-                          'bg-red-100 text-red-800'}`}>
-                        {order.status.charAt(0).toUpperCase() + order.status.slice(1)}
+                      <span
+                        className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full 
+                        ${
+                          order.status === "pending"
+                            ? "bg-yellow-100 text-yellow-800"
+                            : order.status === "processing"
+                            ? "bg-blue-100 text-blue-800"
+                            : order.status === "shipped"
+                            ? "bg-purple-100 text-purple-800"
+                            : order.status === "delivered"
+                            ? "bg-green-100 text-green-800"
+                            : "bg-red-100 text-red-800"
+                        }`}
+                      >
+                        {order.status.charAt(0).toUpperCase() +
+                          order.status.slice(1)}
                       </span>
                     </td>
                     <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
@@ -209,20 +223,28 @@ const AdminDashboard = () => {
           </div>
 
           {politicalContent.length === 0 ? (
-            <p className="text-gray-500 text-center py-6">No political content added yet</p>
+            <p className="text-gray-500 text-center py-6">
+              No political content added yet
+            </p>
           ) : (
             <div className="space-y-4">
               {politicalContent.slice(0, 3).map((content) => (
                 <div key={content.id} className="border rounded-lg p-4">
                   <div className="flex justify-between">
                     <h3 className="font-medium">{content.title}</h3>
-                    <span className={`px-2 text-xs leading-5 font-semibold rounded-full ${
-                      content.active ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
-                    }`}>
-                      {content.active ? 'Active' : 'Inactive'}
+                    <span
+                      className={`px-2 text-xs leading-5 font-semibold rounded-full ${
+                        content.active
+                          ? "bg-green-100 text-green-800"
+                          : "bg-gray-100 text-gray-800"
+                      }`}
+                    >
+                      {content.active ? "Active" : "Inactive"}
                     </span>
                   </div>
-                  <p className="text-gray-500 text-sm mt-1 line-clamp-2">{content.content}</p>
+                  <p className="text-gray-500 text-sm mt-1 line-clamp-2">
+                    {content.content}
+                  </p>
                 </div>
               ))}
             </div>
@@ -242,15 +264,20 @@ const AdminDashboard = () => {
             </Link>
           </div>
 
-          {products.filter(p => p.stock < 10).length === 0 ? (
-            <p className="text-gray-500 text-center py-6">No products with low stock</p>
+          {products.filter((p) => p.stock < 10).length === 0 ? (
+            <p className="text-gray-500 text-center py-6">
+              No products with low stock
+            </p>
           ) : (
             <div className="space-y-4">
               {products
-                .filter(product => product.stock < 10)
+                .filter((product) => product.stock < 10)
                 .slice(0, 3)
                 .map((product) => (
-                  <div key={product.id} className="flex items-center p-4 border rounded-lg">
+                  <div
+                    key={product.id}
+                    className="flex items-center p-4 border rounded-lg"
+                  >
                     <div className="h-10 w-10 flex-shrink-0">
                       <img
                         className="h-10 w-10 rounded-full object-cover"
@@ -259,12 +286,20 @@ const AdminDashboard = () => {
                       />
                     </div>
                     <div className="ml-4 flex-grow">
-                      <div className="text-sm font-medium text-gray-900">{product.name}</div>
-                      <div className="text-sm text-gray-500">${product.price.toFixed(2)}</div>
+                      <div className="text-sm font-medium text-gray-900">
+                        {product.name}
+                      </div>
+                      <div className="text-sm text-gray-500">
+                        ${product.price.toFixed(2)}
+                      </div>
                     </div>
-                    <span className={`px-2 text-xs leading-5 font-semibold rounded-full ${
-                      product.stock < 5 ? 'bg-red-100 text-red-800' : 'bg-yellow-100 text-yellow-800'
-                    }`}>
+                    <span
+                      className={`px-2 text-xs leading-5 font-semibold rounded-full ${
+                        product.stock < 5
+                          ? "bg-red-100 text-red-800"
+                          : "bg-yellow-100 text-yellow-800"
+                      }`}
+                    >
                       {product.stock} left
                     </span>
                   </div>

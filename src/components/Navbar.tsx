@@ -1,8 +1,8 @@
-import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, ShoppingCart, User, X } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import { useState } from "react";
+import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, ShoppingCart, X } from "lucide-react";
+import { useCart } from "../context/CartContext";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -17,13 +17,22 @@ const Navbar = () => {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          <Link to="/" className="text-gray-700 hover:text-pink-600 transition-colors">
+          <Link
+            to="/"
+            className="text-gray-700 hover:text-pink-600 transition-colors"
+          >
             Home
           </Link>
-          <Link to="/products" className="text-gray-700 hover:text-pink-600 transition-colors">
+          <Link
+            to="/products"
+            className="text-gray-700 hover:text-pink-600 transition-colors"
+          >
             Products
           </Link>
-          <Link to="/admin" className="text-gray-700 hover:text-pink-600 transition-colors">
+          <Link
+            to="/admin"
+            className="text-gray-700 hover:text-pink-600 transition-colors"
+          >
             Admin
           </Link>
         </nav>
@@ -43,7 +52,7 @@ const Navbar = () => {
           </Link>
 
           {/* Mobile Menu Button */}
-          <button 
+          <button
             className="md:hidden text-gray-700"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
@@ -57,27 +66,27 @@ const Navbar = () => {
         {isMenuOpen && (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
-            animate={{ height: 'auto', opacity: 1 }}
+            animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             className="md:hidden bg-white overflow-hidden"
           >
             <div className="container mx-auto px-4 py-4 flex flex-col space-y-4">
-              <Link 
-                to="/" 
+              <Link
+                to="/"
                 className="text-gray-700 py-2 border-b border-gray-100"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </Link>
-              <Link 
-                to="/products" 
+              <Link
+                to="/products"
                 className="text-gray-700 py-2 border-b border-gray-100"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Products
               </Link>
-              <Link 
-                to="/admin" 
+              <Link
+                to="/admin"
                 className="text-gray-700 py-2"
                 onClick={() => setIsMenuOpen(false)}
               >
