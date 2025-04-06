@@ -121,7 +121,7 @@ const Home = () => {
               className="text-3xl font-bold mb-4"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
-              Why Choose LuxHair?
+              Why Choose TheDarkHer?
             </h2>
             <div className="w-24 h-1 bg-pink-600 mx-auto" />
           </div>

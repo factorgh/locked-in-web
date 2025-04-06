@@ -78,7 +78,7 @@ const Footer = () => {
             <address className="text-gray-400 not-italic">
               <p>123 Beauty Street</p>
               <p>Los Angeles, CA 90001</p>
-              <p className="mt-2">Email: info@luxhair.com</p>
+              <p className="mt-2">Email: info@thedarkher.com</p>
               <p>Phone: (123) 456-7890</p>
             </address>
           </div>
