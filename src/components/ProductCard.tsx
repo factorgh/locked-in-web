@@ -14,7 +14,7 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
 
   return (
     <motion.div
-      className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
+      className="bg-[#1B1B1B] rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow"
       initial={{ opacity: 0, y: 50 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{
@@ -45,10 +45,10 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
       <div className="p-4">
         <div className="flex justify-between items-start">
           <div>
-            <h3 className="text-lg font-semibold text-gray-800">
+            <h3 className="text-lg font-semibold text-white">
               <Link to={`/product/${product.id}`}>{product.name}</Link>
             </h3>
-            <p className="text-gray-600 text-sm mt-1">
+            <p className="text-white text-sm mt-1">
               {product.category.charAt(0).toUpperCase() +
                 product.category.slice(1)}
             </p>
@@ -57,7 +57,7 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ delay: 0.2 + index * 0.05 }}
-            className="text-pink-600 font-semibold"
+            className="text-white font-semibold"
           >
             ${product.price.toFixed(2)}
           </motion.div>
@@ -66,7 +66,7 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
         <div className="mt-4 flex justify-between items-center">
           <Link
             to={`/product/${product.id}`}
-            className="text-sm text-gray-600 hover:text-pink-600 transition-colors"
+            className="text-sm text-[#FFD700] hover:text-white transition-colors"
           >
             View Details
           </Link>
@@ -78,7 +78,7 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
               backgroundColor: "#db2777", // pink-700
               transition: { duration: 0.2, type: "spring", stiffness: 400 },
             }}
-            className="bg-pink-600 text-white p-2 rounded-full hover:bg-pink-700 transition-colors"
+            className="bg-[#FFD700] text-white p-2 rounded-full hover:bg-white transition-colors"
             onClick={(e) => {
               e.preventDefault();
               addToCart(product);
@@ -87,7 +87,7 @@ const ProductCard = ({ product, index = 0 }: ProductCardProps) => {
             animate={{ rotate: 0, opacity: 1 }}
             transition={{ delay: 0.3 + index * 0.05, type: "spring" }}
           >
-            <ShoppingCart size={18} />
+            <ShoppingCart color="#171717" size={18} />
           </motion.button>
         </div>
       </div>

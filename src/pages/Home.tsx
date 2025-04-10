@@ -102,7 +102,7 @@ const Home = () => {
           <div className="text-center mt-12">
             <Link
               to="/products"
-              className="inline-block border-2 border-pink-600 text-pink-600 px-6 py-2 rounded-full hover:bg-pink-600 hover:text-white transition-colors"
+              className="inline-block border-2 border-[#FFD700] text-[#FFD700] px-6 py-2 rounded-full hover:bg-pink-600 hover:text-white transition-colors"
             >
               View All Products
             </Link>
