@@ -57,7 +57,7 @@ const Home = () => {
           >
             <Link
               to="/products"
-              className="bg-[#FFD700] text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-pink-700 transition-colors"
+              className="bg-[#FFD700] text-[#171717] px-8 py-3 rounded-full text-lg font-medium hover:bg-pink-700 transition-colors"
             >
               Shop Now
             </Link>
