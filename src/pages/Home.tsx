@@ -30,9 +30,9 @@ const Home = () => {
           Your browser does not support the video tag.
         </video>
 
-        <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-white">
+        <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-[#FFD700]">
           <motion.h1
-            className="text-3xl md:text-6xl font-bold mb-4"
+            className="text-3xl md:text-6xl font-bold mb-4 "
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -57,7 +57,7 @@ const Home = () => {
           >
             <Link
               to="/products"
-              className="bg-black text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-pink-700 transition-colors"
+              className="bg-[#FFD700] text-white px-8 py-3 rounded-full text-lg font-medium hover:bg-pink-700 transition-colors"
             >
               Shop Now
             </Link>
@@ -66,11 +66,11 @@ const Home = () => {
       </section>
 
       {/* Featured Products Section */}
-      <section className="py-16 bg-gray-50" ref={refFeatured}>
+      <section className="py-16 bg-[#171717]" ref={refFeatured}>
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <motion.h2
-              className="text-3xl font-bold mb-4"
+              className="text-3xl font-bold mb-4 text-white"
               initial={{ opacity: 0 }}
               animate={isInView ? { opacity: 1 } : {}}
               transition={{ duration: 0.5 }}
@@ -79,7 +79,7 @@ const Home = () => {
               Featured Products
             </motion.h2>
             <motion.div
-              className="w-24 h-1 bg-pink-600 mx-auto"
+              className="w-24 h-1 bg-[#FFD700] mx-auto"
               initial={{ width: 0 }}
               animate={isInView ? { width: 96 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
