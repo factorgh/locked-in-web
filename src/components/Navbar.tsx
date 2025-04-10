@@ -9,29 +9,30 @@ const Navbar = () => {
   const { totalItems } = useCart();
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <header className="bg-black shadow-sm sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         <Link to="/" className="text-2xl font-bold tracking-tighter">
-          <span className="text-pink-600">The Dark</span>Her
+          {/* <span className="text-pink-600">The Dark</span>Her */}
+          <img src="/butterfly.png" className="h-12 w-12" />
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
           <Link
             to="/"
-            className="text-gray-700 hover:text-pink-600 transition-colors"
+            className="text-white hover:text-pink-600 transition-colors"
           >
             Home
           </Link>
           <Link
             to="/products"
-            className="text-gray-700 hover:text-pink-600 transition-colors"
+            className="text-white hover:text-pink-600 transition-colors"
           >
             Products
           </Link>
           <Link
             to="/admin"
-            className="text-gray-700 hover:text-pink-600 transition-colors"
+            className="text-white hover:text-pink-600 transition-colors"
           >
             Admin
           </Link>
@@ -39,7 +40,7 @@ const Navbar = () => {
 
         <div className="flex items-center space-x-4">
           <Link to="/cart" className="relative">
-            <ShoppingCart className="text-gray-700 hover:text-pink-600 transition-colors" />
+            <ShoppingCart className="text-white hover:text-pink-600 transition-colors" />
             {totalItems > 0 && (
               <motion.span
                 initial={{ scale: 0 }}
