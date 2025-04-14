@@ -114,16 +114,16 @@ const Home = () => {
       <PoliticalContentDisplay />
 
       {/* Benefits Section */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#1b1b1b]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <h2
-              className="text-3xl font-bold mb-4"
+              className="text-3xl font-bold mb-4 text-white"
               style={{ fontFamily: "Playfair Display, serif" }}
             >
               Why Choose TheDarkHer?
             </h2>
-            <div className="w-24 h-1 bg-pink-600 mx-auto" />
+            <div className="w-24 h-1 bg-[#FFD700] mx-auto" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -134,7 +134,7 @@ const Home = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5 }}
             >
-              <div className="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#FFD700] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-8 w-8 text-pink-600"
@@ -150,8 +150,10 @@ const Home = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Premium Quality</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold mb-3 text-white">
+                Premium Quality
+              </h3>
+              <p className="text-gray-300">
                 Made with the finest ingredients to nourish and protect your
                 hair.
               </p>
@@ -164,7 +166,7 @@ const Home = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.2 }}
             >
-              <div className="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#FFD700] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-8 w-8 text-pink-600"
@@ -180,8 +182,10 @@ const Home = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Cruelty Free</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold mb-3 text-white">
+                Cruelty Free
+              </h3>
+              <p className="text-gray-300">
                 All our products are never tested on animals and ethically
                 sourced.
               </p>
@@ -194,7 +198,7 @@ const Home = () => {
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: 0.4 }}
             >
-              <div className="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+              <div className="bg-[#FFD700] w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-8 w-8 text-pink-600"
@@ -210,8 +214,10 @@ const Home = () => {
                   />
                 </svg>
               </div>
-              <h3 className="text-xl font-semibold mb-3">Fast Delivery</h3>
-              <p className="text-gray-600">
+              <h3 className="text-xl font-semibold mb-3 text-white">
+                Fast Delivery
+              </h3>
+              <p className="text-gray-300">
                 Quick shipping to your doorstep with secure and trackable
                 delivery.
               </p>

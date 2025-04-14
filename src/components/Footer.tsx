@@ -2,12 +2,12 @@ import { Facebook, Instagram, Twitter } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white pt-12 pb-8">
+    <footer className="bg-[#171717] text-white pt-12 pb-8">
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           <div>
             <h3 className="text-xl font-bold mb-4">
-              <span className="text-pink-500">The Dark</span>Her
+              <span className="text-[#FFD700]">The Dark</span>Her
             </h3>
             <p className="text-gray-400 mb-4">
               Premium hair care products to transform your hair and enhance your
