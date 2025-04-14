@@ -73,9 +73,9 @@ const Products = () => {
       </motion.div>
 
       <div className="mb-8">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-4">
+        <div className="flex flex-col md:flex-col justify-between items-center md:items-center gap-4 mb-4">
           <motion.div
-            className="relative w-full md:w-1/3 "
+            className="relative w-full md:w-2/3 mb-5 "
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.4 }}
@@ -107,7 +107,7 @@ const Products = () => {
 
         {/* Categories - Desktop */}
         <motion.div
-          className="hidden md:flex justify-center mb-8"
+          className="hidden md:flex justify-center mb-12"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
