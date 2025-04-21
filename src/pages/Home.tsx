@@ -1,44 +1,82 @@
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import { useAdmin } from "../context/AdminContext";
 import ProductCard from "../components/ProductCard";
 import PoliticalContentDisplay from "../components/PoliticalContentDisplay";
+
+import { useEffect, useState } from "react";
+
+const slides = [
+  {
+    title: "Beauty That Remembers",
+    subtitle:
+      "Premium products that nourish, strengthen, and revitalize your hair.",
+    video:
+      "https://videos.pexels.com/video-files/7626539/7626539-sd_640_360_25fps.mp4",
+  },
+  {
+    title: "Glow Like Never Before",
+    subtitle:
+      "Unlock the secret to radiant, healthy hair with our botanical formulas.",
+    video:
+      "https://videos.pexels.com/video-files/4167410/4167410-sd_360_450_30fps.mp4",
+  },
+  {
+    title: "Confidence in Every Strand",
+    subtitle: "Experience the transformation. Feel the difference.",
+    video:
+      "https://videos.pexels.com/video-files/4542826/4542826-hd_1280_720_25fps.mp4",
+  },
+];
 
 const Home = () => {
   const { products } = useAdmin();
   const featuredProducts = products.filter((product) => product.featured);
   const refFeatured = useRef(null);
   const isInView = useInView(refFeatured, { once: true, amount: 0.2 });
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 8000); // 8 seconds
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div>
       {/* Hero Section with Video Background */}
       <section className="relative h-[90vh] overflow-hidden">
         <div className="absolute inset-0 bg-black/60 z-10"></div>
-        <video
-          className="absolute inset-0 w-full h-full object-cover"
-          autoPlay
-          muted
-          loop
-          playsInline
-        >
-          <source
-            src="https://videos.pexels.com/video-files/7626539/7626539-sd_640_360_25fps.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
+
+        <AnimatePresence mode="wait">
+          <motion.video
+            key={slides[currentSlide].video}
+            className="absolute inset-0 w-full h-full object-cover"
+            autoPlay
+            muted
+            loop
+            playsInline
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1 }}
+          >
+            <source src={slides[currentSlide].video} type="video/mp4" />
+          </motion.video>
+        </AnimatePresence>
 
         <div className="relative z-20 container mx-auto px-4 h-full flex flex-col justify-center items-center text-center text-[#FFD700]">
           <motion.h1
-            className="text-3xl md:text-6xl font-bold mb-4 "
+            className="text-3xl md:text-6xl font-bold mb-4"
             initial={{ opacity: 0, y: -50 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             style={{ fontFamily: "Playfair Display, serif" }}
           >
-            Beauty That Remembers
+            {slides[currentSlide].title}
           </motion.h1>
 
           <motion.p
@@ -47,7 +85,7 @@ const Home = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            Premium products that nourish, strengthen, and revitalize your hair.
+            {slides[currentSlide].subtitle}
           </motion.p>
 
           <motion.div

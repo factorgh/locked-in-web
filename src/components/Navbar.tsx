@@ -28,7 +28,13 @@ const Navbar = () => {
             to="/products"
             className="text-[#FFD700] hover:text-pink-600 transition-colors"
           >
-            Products
+            Her Products
+          </Link>
+          <Link
+            to="/about"
+            className="text-[#FFD700] hover:text-pink-600 transition-colors"
+          >
+            About Her
           </Link>
           <Link
             to="/admin"

@@ -20,6 +20,7 @@ import { AdminProvider } from "./context/AdminContext";
 import { CartProvider } from "./context/CartContext";
 import { Toaster } from "react-hot-toast";
 import { Elements } from "@stripe/react-stripe-js";
+import AboutUsPage from "./pages/About";
 
 // Replace with your own publishable key from the Stripe Dashboard
 const stripePromise = loadStripe("pk_test_TYooMQauvdEDq54NiTphI7jx");
@@ -86,6 +87,14 @@ function App() {
                     element={
                       <PageTransition>
                         <Products />
+                      </PageTransition>
+                    }
+                  />
+                  <Route
+                    path="/about"
+                    element={
+                      <PageTransition>
+                        <AboutUsPage />
                       </PageTransition>
                     }
                   />
