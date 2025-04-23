@@ -68,7 +68,7 @@ function App() {
               }}
             />
             <div
-              className="min-h-screen flex flex-col bg-[#2a2a2a]"
+              className="min-h-screen flex flex-col bg-[#202020]"
               style={{ fontFamily: "Poppins, sans-serif" }}
             >
               <Navbar />
