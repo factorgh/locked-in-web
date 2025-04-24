@@ -16,7 +16,9 @@ const Cart = () => {
             <ShoppingBag size={32} className="text-gray-500" />
           </div>
 
-          <h2 className="text-2xl font-semibold mb-4">Your cart is empty</h2>
+          <h2 className="text-2xl font-semibold mb-4 text-white">
+            Your cart is empty
+          </h2>
           <p className="text-gray-600 mb-8">
             Looks like you haven't added anything to your cart yet.
           </p>
@@ -35,7 +37,7 @@ const Cart = () => {
   return (
     <div className="container mx-auto px-4 py-12">
       <h1
-        className="text-3xl font-bold mb-8"
+        className="text-3xl font-bold mb-8 text-white"
         style={{ fontFamily: "Playfair Display, serif" }}
       >
         Your Shopping Cart
