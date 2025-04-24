@@ -45,7 +45,7 @@ const ProductDetail = () => {
   };
 
   return (
-    <div className="container mx-auto px-4 py-12 bg-[#2a2a2a]">
+    <div className="container mx-auto px-4 py-12 bg-[#171717]">
       <button
         onClick={() => navigate("/products")}
         className="inline-flex items-center text-white mb-8 transition-colors"
