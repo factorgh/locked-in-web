@@ -94,7 +94,7 @@ const Checkout = () => {
   return (
     <div className="container mx-auto px-4 py-12">
       <h1
-        className="text-3xl font-bold mb-8"
+        className="text-3xl font-bold mb-8 text-white"
         style={{ fontFamily: "Playfair Display, serif" }}
       >
         Checkout
@@ -111,15 +111,19 @@ const Checkout = () => {
             >
               <span
                 className={`flex items-center justify-center w-8 h-8 rounded-full ${
-                  currentStep >= 1 ? "bg-pink-600 text-white" : "bg-gray-200"
+                  currentStep >= 1
+                    ? "bg-[#FFD700] text-gray-900"
+                    : "bg-gray-200"
                 }`}
               >
                 1
               </span>
-              <span className="ml-2 text-sm font-medium">Information</span>
+              <span className="ml-2 text-sm font-medium text-[#FFD700]">
+                Information
+              </span>
               <div
                 className={`w-16 sm:w-24 h-1 ml-2 ${
-                  currentStep >= 2 ? "bg-pink-600" : "bg-gray-200"
+                  currentStep >= 2 ? "bg-[#FFD700" : "bg-gray-200"
                 }`}
               ></div>
             </li>
@@ -135,7 +139,9 @@ const Checkout = () => {
               >
                 2
               </span>
-              <span className="ml-2 text-sm font-medium">Payment</span>
+              <span className="ml-2 text-sm font-medium text-gray-100">
+                Payment
+              </span>
             </li>
           </ol>
         </div>
