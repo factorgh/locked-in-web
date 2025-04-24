@@ -154,7 +154,7 @@ const Cart = () => {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
-              className="w-full py-3 bg-pink-600 text-white rounded-full font-medium flex items-center justify-center hover:bg-pink-700 transition-colors"
+              className="w-full py-3 bg-[#FFD700] text-black rounded-full font-medium flex items-center justify-center transition-colors"
               onClick={() => navigate("/checkout")}
             >
               Proceed to Checkout
